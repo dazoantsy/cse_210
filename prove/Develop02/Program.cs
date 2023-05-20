@@ -25,15 +25,35 @@ class Program
             switch (choice)
             {
                 case 1:
-                string dateInfo = GetDateTime();
-                string prompt = generatedPrompt.GetPrompt();
                 Entry entry = new Entry();
+                string dateInfo = GetDateTime();
                 entry._time = dateInfo;
-                entry._prompt = prompt;
-                Console.Write($"{prompt}\n");
-                Console.Write("--> ");
-                string userEntry = Console.ReadLine();
-                entry._entry = userEntry;
+                int response = 0;
+                while (response != 1 && response != 2)
+                {
+                    Console.Write("1. Write my own\n");
+                    Console.Write("2. Answer questionnaires\n");
+                    string userResponse = Console.ReadLine();
+                    response = int.Parse(userResponse);
+                    if (response == 1)
+                    {
+                        Console.Write("Please type your journal entry\n");
+                        Console.Write(">>>\n");
+                        string myOwnEntry = Console.ReadLine();
+                        entry._prompt = "";
+                        entry._entry = myOwnEntry;
+                    }
+                    else
+                    {
+                        string prompt = generatedPrompt.GetPrompt();
+                        entry._prompt = prompt;
+                        Console.Write($"{prompt}\n");
+                        Console.Write("--> ");
+                        string userEntry = Console.ReadLine();
+                        entry._entry = userEntry;
+                    }
+                }
+                
                 journal._journal.Add(entry);
                 Console.Clear();
                 break;
