@@ -40,7 +40,7 @@ class Program
                         Console.Write("Please type your journal entry\n");
                         Console.Write(">>>\n");
                         string myOwnEntry = Console.ReadLine();
-                        entry._prompt = "";
+                        entry._prompt = "My Own Journal Entry";
                         entry._entry = myOwnEntry;
                     }
                     else
