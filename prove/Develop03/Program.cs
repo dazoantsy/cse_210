@@ -6,7 +6,6 @@ class Program
 	{
 		Reference scriptureReference = new Reference("Proverbs", "3", "5", "6");
 		string scriptureVerse = "Trust in the Lord with all thine heart; and lean not unto thine own dunderstanding. In all thy ways acknowledge him, and he shall direct thy paths.";
-		ListConversion listConversion = new ListConversion(scriptureVerse);
 		Scripture scripture = new Scripture(scriptureVerse);
 		Word words = new Word(scripture.convertedList());
         
