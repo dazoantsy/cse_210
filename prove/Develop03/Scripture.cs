@@ -2,13 +2,14 @@ using System;
 
 public class Scripture
 {
-	//private string _scriptureText;
+	private string _scriptureText;
 	//private string _scriptureReference;
 	private List<string> _textList;
 	
-	public Scripture(List<string> scriptureTextList)
+	public Scripture(string scriptureText)
 	{
-		_textList = scriptureTextList;
+		_scriptureText = scriptureText;
+		_textList = _scriptureText.Split(' ').ToList();
 	}
 
 	/*private void convertToList()
@@ -37,8 +38,8 @@ public class Scripture
 		return string .Join(' ', _textList);
 	}
 
-	/*public List<string> convertedList()
+	public List<string> convertedList()
 	{
 		return _textList;
-	}*/
+	}
 }
