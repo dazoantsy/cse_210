@@ -23,4 +23,8 @@ public class Word
 		}
 	return retValue;
 	}
+	/*public string textInList()
+	{
+		return string .Join(' ', _textList);
+	}*/
 }

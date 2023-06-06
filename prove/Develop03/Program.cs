@@ -15,13 +15,12 @@ class Program
 
 		string userInput = Console.ReadLine();
 
-		while (userInput != "quit" && words.hasShownWords() == true)
+		while (userInput != "quit" & words.hasShownWords() == true)
 		{
 			Console.Clear();
 			scripture.removeWordsFromList();
 			Console.WriteLine($"{scriptureReference.toString()} \n{scripture.toString()}\n");
 			userInput = Console.ReadLine();
 		}
-		
 	}
 }

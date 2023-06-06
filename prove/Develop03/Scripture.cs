@@ -3,7 +3,6 @@ using System;
 public class Scripture
 {
 	private string _scriptureText;
-	//private string _scriptureReference;
 	private List<string> _textList;
 	
 	public Scripture(string scriptureText)
@@ -12,14 +11,9 @@ public class Scripture
 		_textList = _scriptureText.Split(' ').ToList();
 	}
 
-	/*private void convertToList()
-	{
-		_textList = _scriptureText.Split(' ').ToList();
-	}*/
-
 	public void removeWordsFromList()
 	{
-		int wordsToRemove = new Random().Next(3);
+		int wordsToRemove = new Random().Next(1, 3);
 		int wordsRemoved = 0;
 		do
 		{
