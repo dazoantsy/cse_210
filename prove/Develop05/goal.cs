@@ -43,7 +43,9 @@ public abstract class Goal
 
     public abstract int GetPoints();
 
-    public abstract void RecordEvent();
+    public abstract void RecordEvent(int earnedPoint);
 
     public abstract bool IsComplete();
+
+    public abstract string GetGoalStatus();
 }

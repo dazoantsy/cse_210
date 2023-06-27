@@ -35,9 +35,9 @@ public class Menu
 
     public void DisplayGoalTypeMenu()
     {
-        foreach (string menuItem in GoalTypeMenu)
+        foreach (string menuItem2 in GoalTypeMenu)
         {
-            Console.WriteLine(menuItem);
+            Console.WriteLine(menuItem2);
         }
     }
     

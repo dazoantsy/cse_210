@@ -1,19 +1,19 @@
 using System.IO;
 using System.Collections.Generic;
 
-public class SaveLoad
+public class SaveLoadGoals
 {
-    private List<string> _details, _loadedDetails;
-    //private string _type, _name, _description, _points, _status, _bonusRequirement, _bonusPoints;
-
-    public SaveLoad(List<string> details)
+    private List<string[]> _goals;
+    string[] lines;
+    
+    public SaveLoadGoals(List<string[]> goals)
     {
-        _details = details;
+        _goals = goals;
     }
 
-    public void CreateFile(string fileToCreate)
+    public void CreateFile()
     {
-        Console.Write($"What is the file name for the ${fileToCreate} file? ");
+        Console.Write("What is the file name for the Goal file? ");
         string _userFileName = Console.ReadLine();
         if (!File.Exists(_userFileName))
         {
@@ -33,9 +33,9 @@ public class SaveLoad
     {
         using (StreamWriter outputFile = new StreamWriter(_userFileName))
         {
-            foreach (string line in _details)
+            foreach (string[] line in _goals)
             {
-            outputFile.WriteLine((String.Join(", ", _details)));
+            outputFile.WriteLine((String.Join(", ", line)));
             }
         }
     }
@@ -44,21 +44,21 @@ public class SaveLoad
     {
         using (StreamWriter outputFile = new StreamWriter(_userFileName, append:true))
         {
-            foreach (string line in _details)
+            foreach (string[] line in _goals)
             {
-            outputFile.WriteLine((String.Join(", ", _details)));
+            outputFile.WriteLine((String.Join(", ", line)));
             }
         }
     }
 
-    public List<string> LoadFile()
+    public string[] LoadFile()
     {
         Console.Write("What is your file name? ");
         string _userFileName = Console.ReadLine();
         if (File.Exists(_userFileName))
         {
-            _loadedDetails = File.ReadAllLines(_userFileName).Where(arg => !string.IsNullOrWhiteSpace(arg)).ToList();
+            lines = File.ReadAllLines(_userFileName);//.Where(arg => !string.IsNullOrWhiteSpace(arg)).ToList();
         }
-        return _loadedDetails;
+        return lines;
     }
 }
