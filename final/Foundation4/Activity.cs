@@ -12,7 +12,7 @@ public class Activity
     }
     public string GetSummary()
     {
-        return $"{_date} {_typeOfActivity} ({_time}min)> Distance {GetDistance()} km || Speed: {Math.Round(GetSpeed(), 2)} kph || Pace: {Math.Round(GetPace(), 2)} min per km";
+        return $"{_date}: {_typeOfActivity} at ({_time}min)> Distance: {GetDistance()} km /// Speed: {Math.Round(GetSpeed(), 2)} kph /// Pace: {Math.Round(GetPace(), 2)} min per km";
     }
     protected virtual double GetDistance()
     {
